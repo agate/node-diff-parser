@@ -1,4 +1,4 @@
-# ![Diff Parser for Node](https://raw.github.com/agate/node-diff-parser/master/logo.svg)
+# ![Diff Parser for Node](http://agate.github.com/node-diff-parser/images/logo.svg)
 
 ## Installation
 
