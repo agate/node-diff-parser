@@ -1,7 +1,22 @@
 doctype 5
 html(lang="en")
   head
-    link(href="https://github.global.ssl.fastly.net/assets/github2-de97f1b8c29a92ab22225717b1de2eb56b3516ce.css", media="all", rel="stylesheet", type="text/css")
+    style(type="text/css").
+      body {
+        font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+        font-size: 11px;
+        color: #4a4a4a
+      }
+      .git-chunk {
+        background-color: #ececec;
+      }
+      .git-deletion {
+        background-color: #ffc4b4;
+      }
+      .git-insertion {
+        background-color: #d4ffb4;
+      }
+        
   body
     #files.diff-view
       each file in parsedFiles
@@ -11,7 +26,7 @@ html(lang="en")
             table.file-code.file-diff
               each line in file.lines
                 if (line.type == 'chunk')
-                  tr.file-diff-line.gc
+                  tr.file-diff-line.git-chunk
                     td.diff-line-num ...
                     td.diff-line-num ...
                     td.diff-line-code= line.content
@@ -21,13 +36,13 @@ html(lang="en")
                     td.diff-line-num= line.additionLineNum
                     td.diff-line-code= line.content
                 else if (line.type == 'deletion')
-                  tr.file-diff-line.gd
+                  tr.file-diff-line.git-deletion
                     td.diff-line-num= line.deletionLineNum
                     td.diff-line-num.empty-cell
                       span.line-num-content &nbsp;
                     td.diff-line-code= line.content
                 else if (line.type == 'addition')
-                  tr.file-diff-line.gi
+                  tr.file-diff-line.git-insertion
                     td.diff-line-num.empty-cell
                       span.line-num-content &nbsp;
                     td.diff-line-num= line.additionLineNum
