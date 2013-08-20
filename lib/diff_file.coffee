@@ -17,9 +17,9 @@ module.exports = class DiffFile
     @lines.push(line)
 
     if line.type == 'chunk'
-      match = line.content.match(/^@@\s+\-(\d+),\d+\s+\+(\d+),/)
-      @deletionLineNum = match[1]
-      @additionLineNum = match[2]
+      match = line.content.match(/^@@\s+\-([^\s]+)\s+\+([^\s]+)/)
+      @deletionLineNum = match[1].split(',')[0]
+      @additionLineNum = match[2].split(',')[0]
 
     else if line.type == 'normal'
       line.deletionLineNum = @deletionLineNum++
