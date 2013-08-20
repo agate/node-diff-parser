@@ -1,0 +1,16 @@
+{
+  "name":         "diff-parser",
+  "description":  "Diff parser",
+  "author":       "Hao Hong <agate.hao@gmail.com>",
+  "version":      "0.0.1",
+  "licenses":     [{ "type": "MIT" }],
+  "engines":      { "node":  ">=0.10.0" },
+  "dependencies": {
+    "jade":          ">=0.34.1",
+    "coffee-script": ">=1.6.3"
+  },
+  "repository":   {
+    "type": "git",
+    "url": "git://github.com/agate/diff-parser.git"
+  }
+}
